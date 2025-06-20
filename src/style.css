@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+body {
+  background: black;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 2rem 5rem 2rem;
+}
+
+button {
+  outline: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input {
+  background: white;
+  color: black;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+table {
+  width: 100%;
+  /* border: 1px solid white; */
+  /* border-collapse: collapse; */
+  /* box-shadow: 0 0px 5px 5px white; */
+}
+
+tbody {
+  text-align: center;
+}
+
+td,
+th {  
+  padding: 1rem;
+}
