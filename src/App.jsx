@@ -115,7 +115,7 @@ function App() {
   return (
     <div className="container">
       <main className="main">
-        <h1 className="text-4xl font-bold text-center mt-20">Employee</h1>
+        <h1 className="text-4xl font-bold text-center mt-20">Employee Dashboard</h1>
         <div>
           <form
             className="flex justify-center gap-3 mt-10"
