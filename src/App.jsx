@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { subYears } from "date-fns";
+import { PropagateLoader } from "react-spinners";
 
 function App() {
   const [employees, setEmployees] = useState([]);
@@ -113,19 +114,21 @@ function App() {
   }, []);
 
   return (
-    <div className="container">
-      <main className="main">
-        <h1 className="text-4xl font-bold text-center mt-20">Employee Dashboard</h1>
+    <div className="flex justify-center min-h-screen px-8 pb-20">
+      <main>
         <div>
+          <h1 className="text-4xl font-bold text-center mt-20">
+            Employee Dashboard
+          </h1>
           <form
-            className="flex justify-center gap-3 mt-10"
+            className="flex justify-center gap-3 mt-10 flex-wrap"
             onSubmit={handleSubmit}
-            onChange={handleAddEmpInputChange}
           >
             <input
               value={newEmployee.name}
               placeholder="Employee Name"
               name="name"
+              onChange={handleAddEmpInputChange}
             />
             <DatePicker
               selected={newEmployee?.dob}
@@ -142,6 +145,7 @@ function App() {
               value={newEmployee?.location}
               placeholder="Location"
               name="location"
+              onChange={handleAddEmpInputChange}
             />
             <input
               type="number"
@@ -149,13 +153,16 @@ function App() {
               name="salary"
               min="1"
               value={newEmployee?.salary}
+              onChange={handleAddEmpInputChange}
             />
             <button className="bg-violet-600 hover:bg-violet-500">Add</button>
           </form>
         </div>
-        <div className="mt-10 relative overflow-x-auto sm:rounded-lg">
-          {!!employees[0] && (
-            <table className="w-full text-sm text-gray-400">
+        <div className="mt-10 relative overto sm:rounded-lg">
+          {!employees[0] ? (
+            <PropagateLoader color="#ffffff" className="text-center pt-20" />
+          ) : (
+            <table className="text-sm text-gray-400">
               <thead className="bg-gray-700 text-gray-400 uppercase">
                 <tr>
                   <th scope="col">Name</th>
